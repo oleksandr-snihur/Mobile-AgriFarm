@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { NavigationContainerRef, ParamListBase } from '@react-navigation/native';
-import { KeyboardAvoidingView, TouchableOpacity, StyleSheet, View } from "react-native";
-import { Text } from 'react-native-paper';
+import React, { useState } from 'react'
+import { NavigationContainerRef, ParamListBase } from '@react-navigation/native'
+import { KeyboardAvoidingView, ScrollView, TouchableOpacity, StyleSheet, View } from "react-native"
+import { Text } from 'react-native-paper'
+import tw from 'twrnc'
 
 import { theme } from '../theme/theme';
 import Logo from '../components/atoms/Logo';
@@ -40,34 +41,39 @@ const LoginScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
   }
 
   return (
-    <KeyboardAvoidingView style={styles.container}>
-      <Logo width={170}/>
-      <Text style={styles.welcome}>Welcome!</Text>
-      <Text style={styles.hint}>Enter your credential to login</Text>
-      <TextInput
-        label="Email"
-        value={email.value}
-        icon={'eye'}
-        onChangeText={(text) => setEmail({ value: text, error: '' })}
-      />
-      <TextInput
-        label="Password"
-        value={password.value}
-        icon={'eye'}
-        secureTextEntry={true}
-        onChangeText={(text) => setPassword({ value: text, error: '' })}
-      />
-      <Button mode="contained" onPress={onForgotPasswordPressed}>Login</Button>
-    </KeyboardAvoidingView>
+    <ScrollView style={tw`bg-blue-100`}>
+      <View style={styles.container}>
+        <Logo width={170}/>
+        <Text style={styles.welcome}>Welcome!</Text>
+        <Text style={styles.hint}>Enter your credential to login</Text>
+        <TextInput
+          label="Email"
+          value={email.value}
+          icon="email-outline"
+          onChangeText={(text) => setEmail({ value: text, error: '' })}
+        />
+        <TextInput
+          label="Password"
+          value={password.value}
+          icon={'eye-outline'}
+          secureTextEntry={true}
+          onChangeText={(text) => setPassword({ value: text, error: '' })}
+        />
+        <Button mode="contained" onPress={onForgotPasswordPressed}>Login</Button>
+      </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  scrollView: {
+    backgroundColor: '#ffffff'
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: "#ffffff"
+    height: '100%'
   },
   logoContainer: {
     flex: 1,

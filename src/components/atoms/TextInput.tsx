@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { StyleSheet } from 'react-native';
-import { TextInput as PaperTextInput } from 'react-native-paper';
+import * as React from 'react'
+import { StyleSheet } from 'react-native'
+import { TextInput as PaperTextInput } from 'react-native-paper'
 
 type Props = {
   label: string;
@@ -18,7 +18,7 @@ const TextInput: React.FunctionComponent<Props> = ({label, value="", icon, secur
       label={label}
       value={value}
       secureTextEntry={secureTextEntry}
-      right={<PaperTextInput.Icon icon={icon} />}
+      right={<PaperTextInput.Icon icon="eye" size={20}/>}
       onChangeText={onChangeText}
       style={styles.container}
     />
@@ -27,7 +27,8 @@ const TextInput: React.FunctionComponent<Props> = ({label, value="", icon, secur
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%"
+    width: "100%",
+    backgroundColor: "#ffffff"
   },
 });
 
