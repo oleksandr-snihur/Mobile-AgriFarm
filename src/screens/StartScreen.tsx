@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import { NavigationContainerRef, ParamListBase } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { View, ImageBackground, StyleSheet } from 'react-native';
-import Logo from '../components/atoms/Logo';
 
-const splashBg = require('../assets/images/splashBg.png');
+import Logo from '../components/atoms/Logo';
+const splashImg = require('../assets/images/splash.png');
 
 type Props = {
   navigation: NavigationContainerRef<ParamListBase>;
@@ -13,13 +12,12 @@ type Props = {
 
 const StartScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
   useEffect(() => {
-    // Hide the splash screen after 2.5 seconds
     setTimeout(() => {
       try {
         SplashScreen.hide();
         navigation.reset({
           index: 0,
-          routes: [{ name: 'Home' }],
+          routes: [{ name: 'login' }],
         })
       } catch (e) {
         console.warn(e);
@@ -28,11 +26,9 @@ const StartScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
   }, []);;
 
   return (
-    <ImageBackground
-      style={styles.container}
-      source={splashBg}>
+    <ImageBackground style={styles.container} source={splashImg}>
         <View style={styles.logoView}>
-          <Logo />
+          <Logo width={220}/>
         </View>
     </ImageBackground>
   );
@@ -41,8 +37,8 @@ const StartScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: "center",
+    alignItems: "center"
   },
   logoView: {
     top: "-12%"

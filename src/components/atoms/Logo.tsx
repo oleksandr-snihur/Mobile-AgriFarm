@@ -7,20 +7,19 @@ type LogoProps = {
   width?: number;
 };
 
-const Logo = ({ width = 166 }: LogoProps) => {
+const Logo = ({ width = 267 }: LogoProps) => {
   return (
     <Image
       source={imgLogo}
       resizeMode="contain"
-      style={[styles.logo, { width: width, height: (width/166.0*103)}]}
+      style={[styles.logo, { width: width, height: (width/267.0*232)}]}
     />
   );
 };
 
 const styles = StyleSheet.create({
   logo: {
-    alignSelf: 'center',
-    marginBottom: 16,
+    alignSelf: 'center'
   },
 });
 
