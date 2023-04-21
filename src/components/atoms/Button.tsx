@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleProp, ViewStyle, StyleSheet } from 'react-native'
 import { Button as PaperButton, ButtonProps } from 'react-native-paper'
+
 import { theme } from '../../theme/theme'
 
 
@@ -14,7 +15,7 @@ const Button: React.FC<Props> = ({ mode="contained", style, ...props}) => {
     <PaperButton
       style={[
         styles.button,
-        mode === 'outlined' && { backgroundColor: theme.colors.surface },
+        mode === 'outlined' && { backgroundColor: theme.colors.outline },
         style,
       ]}
       labelStyle={styles.text}

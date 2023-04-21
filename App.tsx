@@ -7,6 +7,7 @@ import {
 } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import { Provider as PaperProvider } from 'react-native-paper';
+
 import {theme} from './src/theme/theme'
 
 import {
@@ -27,11 +28,11 @@ const App: React.FC = () => {
   return (
     <PaperProvider theme={theme}>
       <NavigationContainer ref={setNavigationRef}>
-        <Stack.Navigator initialRouteName="start">
-          <Stack.Screen name="start" options={{headerShown: false}} component={StartScreen} />
-          <Stack.Screen name="login" options={{headerTitle: 'Login'}} component={LoginScreen} />
-          <Stack.Screen name="signup" options={{headerTitle: 'Signup'}} component={SignupScreen} />
-          <Stack.Screen name="home" component={HomeScreen} />
+        <Stack.Navigator initialRouteName='start'>
+          <Stack.Screen name='start' options={{headerShown: false}} component={StartScreen} />
+          <Stack.Screen name='login' options={{headerTitle: 'Login'}} component={LoginScreen} />
+          <Stack.Screen name='signup' options={{headerTitle: 'Signup'}} component={SignupScreen} />
+          <Stack.Screen name='home' component={HomeScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

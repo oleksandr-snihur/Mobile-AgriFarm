@@ -2,18 +2,16 @@ import { Dimensions } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 
+const guidelineBaseWidth = 375;
+const guidelineBaseHeight = 812;
+
 export const metrics = {
-  smallMargin: 5,
-  baseMargin: 10,
-  doubleBaseMargin: 20,
-
-  smallPadding: 5,
-  basePadding: 10,
-  doubleBasePadding: 20,
-
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
-
-  borderRadius: 5,
-  doubleBorderRadius: 10
 };
+
+const horizontalScale = (size) => (width / guidelineBaseWidth) * size;
+const verticalScale = (size) => (height / guidelineBaseHeight) * size;
+const moderateScale = (size, factor = 0.5) => size + (horizontalScale(size) - size) * factor;
+
+export { horizontalScale, verticalScale, moderateScale }
