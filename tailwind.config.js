@@ -12,7 +12,7 @@ module.exports = {
         yellowLight: "#FFBA49",
   
         grey: "#949494",
-        greyLight: "#949494",
+        greyLight: "#B3B3B3",
       },
     },
   },

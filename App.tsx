@@ -20,6 +20,24 @@ import {
 const Stack = createStackNavigator();
 let navigationRef: NavigationContainerRef<ParamListBase> | null = null;
 
+const AuthStack: React.FC = () => {
+  return (
+    <Stack.Navigator initialRouteName='start'>
+      <Stack.Screen name='start' options={{headerShown: false}} component={StartScreen} />
+      <Stack.Screen name='login' options={{headerTitle: 'Login'}} component={LoginScreen} />
+      <Stack.Screen name='signup' options={{headerTitle: 'Signup'}} component={SignupScreen} />
+    </Stack.Navigator>
+  )
+}
+
+const HomeStack: React.FC = () => {
+  return (
+    <Stack.Navigator initialRouteName='home'>
+      <Stack.Screen name='home' component={HomeScreen} />
+    </Stack.Navigator>
+  )
+}
+
 const App: React.FC = () => {
   const setNavigationRef = (ref: NavigationContainerRef<ParamListBase> | null) => {
     navigationRef = ref;
@@ -28,11 +46,9 @@ const App: React.FC = () => {
   return (
     <PaperProvider theme={theme}>
       <NavigationContainer ref={setNavigationRef}>
-        <Stack.Navigator initialRouteName='start'>
-          <Stack.Screen name='start' options={{headerShown: false}} component={StartScreen} />
-          <Stack.Screen name='login' options={{headerTitle: 'Login'}} component={LoginScreen} />
-          <Stack.Screen name='signup' options={{headerTitle: 'Signup'}} component={SignupScreen} />
-          <Stack.Screen name='home' component={HomeScreen} />
+        <Stack.Navigator initialRouteName='authStack'>
+          <Stack.Screen name='authStack' options={{headerShown: false}} component={AuthStack}/>
+          <Stack.Screen name='homeStack' options={{headerShown: false}} component={HomeStack}/>
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

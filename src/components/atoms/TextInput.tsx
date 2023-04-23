@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
-import { View } from 'react-native'
-import { TextInput as PaperTextInput, Text, TextInputProps } from 'react-native-paper'
+import React, {useState} from 'react';
+import { View } from 'react-native';
+import { TextInput as PaperTextInput, Text, TextInputProps } from 'react-native-paper';
 
 import tw from '../../helpers/tailwind'
 

@@ -1,26 +1,20 @@
 import React from 'react';
-import { Image, StyleSheet } from 'react-native';
 
-const imgLogo = require('../../assets/images/logo.png');
+import tw from '../../helpers/tailwind';
+import LogoSvg from '../../assets/images/logo.svg';
 
 type LogoProps = {
   width?: number;
 };
 
-const Logo = ({ width = 267 }: LogoProps) => {
+const Logo = ({ width=267 }: LogoProps) => {
   return (
-    <Image
-      source={imgLogo}
-      resizeMode="contain"
-      style={[styles.logo, { width: width, height: (width/267.0*232)}]}
+    <LogoSvg
+      width={width}
+      height={width/267.0*232}
+      style={tw`self-center`}
     />
   );
 };
-
-const styles = StyleSheet.create({
-  logo: {
-    alignSelf: 'center'
-  },
-});
 
 export default Logo;

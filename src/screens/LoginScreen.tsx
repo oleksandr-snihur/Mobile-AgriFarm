@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import { NavigationContainerRef, ParamListBase } from '@react-navigation/native'
-import { TouchableOpacity, View, StatusBar } from "react-native"
+import React, { useState } from 'react';
+import { TouchableOpacity, View, StatusBar } from "react-native";
+import { useHeaderHeight } from '@react-navigation/elements';
+import { NavigationContainerRef, ParamListBase } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { Text, Button } from 'react-native-paper'
-import { useHeaderHeight } from '@react-navigation/elements';
+import { Text, Button } from 'react-native-paper';
 
-import tw from '../helpers/tailwind'
-import { metrics } from '../theme/metrics';
 import Logo from '../components/atoms/Logo';
-import { TextInput} from '../components/atoms/';
+import tw from '../helpers/tailwind';
+import { metrics } from '../theme/metrics';
+import { TextInput } from '../components/atoms/';
 import { emailValidator, passwordValidator } from '../helpers/validator';
 
 type Props = {
@@ -31,16 +31,15 @@ const LoginScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
     }
     navigation.reset({
       index: 0,
-      routes: [{ name: 'home' }],
+      routes: [{ name: 'homeStack' }],
     })
   }
 
   const onSignupPressed = () => {
-
+    navigation.navigate('signup')
   }
 
   const onForgotPasswordPressed = () => {
-    console.log(metrics.screenHeight, headerHeight, statusBarHeight)
   }
 
   const headerHeight = useHeaderHeight();
@@ -75,13 +74,13 @@ const LoginScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
             secureTextEntry={true}
             onChangeText={(text) => setPassword({ value: text, error: '' })}
           />
-          <TouchableOpacity style={tw`w-full items-end`} onPress={onForgotPasswordPressed}>
-            <Text style={tw`text-sm text-yellow`} >Forgot password?</Text>
+          <TouchableOpacity style={tw`w-full items-end`} activeOpacity={0.7} onPress={onForgotPasswordPressed}>
+            <Text style={tw`text-sm text-yellow`}>Forgot password?</Text>
           </TouchableOpacity>
           <Button mode="contained" style={tw`w-full rounded-md mt-5`} labelStyle={tw`text-lg`} onPress={onLoginPressed}>Login</Button>
           <View style={tw`absolute bottom-3 w-full flex-row items-center justify-center`}>
             <Text style={tw`text-lg text-grey`}>Don't have an account?</Text>
-            <TouchableOpacity onPress={onSignupPressed}>
+            <TouchableOpacity onPress={onSignupPressed} activeOpacity={0.7}>
               <Text style={tw`text-xl text-yellow`}> Sign Up</Text>
             </TouchableOpacity>
           </View>
