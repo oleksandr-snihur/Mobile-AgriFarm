@@ -9,8 +9,13 @@ interface Props extends TextInputProps {
   icon: string;
 }
 
+
+/**
+ * component definition
+ * @returns ReactNode
+ */
 const TextInput: React.FunctionComponent<Props> = ({errorText="", secureTextEntry=false, icon, ...props}) => {
-  const [showPwd, setShowPwd] = useState(secureTextEntry);
+  const [showPwd, setShowPwd] = useState(!secureTextEntry);
 
   return (
     <View style={tw`w-full my-1.5`}>

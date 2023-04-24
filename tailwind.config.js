@@ -13,7 +13,15 @@ module.exports = {
   
         grey: "#949494",
         greyLight: "#B3B3B3",
+
+        screenBackground: "#F7FFFC"
       },
+      fontFamily: {
+        RalewayRegular: ['Raleway-Regular'],
+        RalewayMedium: ['Raleway-Medium'],
+        RalewaySemiBold: ['Raleway-SemiBold'],
+        RalewayBold: ['Raleway-Bold'],
+      }
     },
   },
   plugins: [],

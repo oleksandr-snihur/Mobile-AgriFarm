@@ -7,6 +7,11 @@ type LogoProps = {
   width?: number;
 };
 
+
+/**
+ * component definition
+ * @returns ReactNode
+ */
 const Logo = ({ width=267 }: LogoProps) => {
   return (
     <LogoSvg

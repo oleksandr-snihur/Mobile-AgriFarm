@@ -20,6 +20,10 @@ type Props = {
 }
 
 
+/**
+ * component definition
+ * @returns ReactNode
+ */
 const SignupScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
 
   const [registerType, setRegisterType] = useState(true); // true = farmer, false = buyer
@@ -46,7 +50,7 @@ const SignupScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
   }
 
   const onLoginPressed = () => {
-    console.log(metrics.screenHeight, headerHeight, statusBarHeight)
+    navigation.navigate('Login');
   }
 
   const headerHeight = useHeaderHeight();

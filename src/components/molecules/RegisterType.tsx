@@ -14,7 +14,11 @@ type Props = {
   onPress: () => void;
 }
 
-const RegisterType: React.FunctionComponent<Props> = ({children, text, active, onPress, style={}, ...props}) => {
+/**
+ * component definition
+ * @returns ReactNode
+ */
+const RegisterType: React.FunctionComponent<Props> = ({children, text, active, onPress, style={}}) => {
 
   return (
     <View style={tw.style(`flex-row items-center`, style)}>

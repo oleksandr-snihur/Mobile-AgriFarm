@@ -1,9 +1,18 @@
-import { DefaultTheme } from 'react-native-paper'
+import { DefaultTheme, configureFonts } from 'react-native-paper'
+import { fontConfig } from './fonts';
+
+// const fontConfig = {
+//   default: {
+//     fontFamily: 'Raleway-Regular',
+//     fontWeight: 'normal',
+//   },
+// };
+
 
 export const theme = {
   ...DefaultTheme,
+  fonts: configureFonts({config: fontConfig}),
   colors: {
-    ...DefaultTheme.colors,
     primary: "#00933F",
     onPrimary: "rgb(255, 255, 255)",
     primaryContainer: "#26BC80",
@@ -47,6 +56,9 @@ export const theme = {
 
     black: "#000000",
     grey: "#949494",
-    greyLight: "#949494"
+    greyLight: "#949494",
+
+    screenBackground: "#F7FFFC"
+
   }
 }

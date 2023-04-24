@@ -10,6 +10,11 @@ type Props = {
   navigation: NavigationContainerRef<ParamListBase>;
 }
 
+
+/**
+ * component definition
+ * @returns ReactNode
+ */
 const StartScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
   useEffect(() => {
     setTimeout(() => {
@@ -17,7 +22,7 @@ const StartScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
         SplashScreen.hide();
         navigation.reset({
           index: 0,
-          routes: [{ name: 'login' }],
+          routes: [{ name: 'Login' }],
         })
       } catch (e) {
         console.warn(e);

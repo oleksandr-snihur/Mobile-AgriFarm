@@ -6,8 +6,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Text, Button } from 'react-native-paper';
 
-import Logo from '../components/atoms/Logo';
 import tw from '../helpers/tailwind';
+import Logo from '../components/atoms/Logo';
 import { metrics } from '../theme/metrics';
 import { TextInput } from '../components/atoms/';
 import { emailValidator, passwordValidator } from '../helpers/validator';
@@ -16,10 +16,15 @@ type Props = {
   navigation: NavigationContainerRef<ParamListBase>;
 }
 
+
+/**
+ * component definition
+ * @returns ReactNode
+ */
 const LoginScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
 
-  const [email, setEmail] = useState({ value: '', error: '' })
-  const [password, setPassword] = useState({ value: '', error: '' })
+  const [email, setEmail] = useState({ value: 'test@agrisense.com', error: '' })
+  const [password, setPassword] = useState({ value: '123456', error: '' })
 
   const onLoginPressed = () => {
     const emailError = emailValidator(email.value)
@@ -36,7 +41,7 @@ const LoginScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
   }
 
   const onSignupPressed = () => {
-    navigation.navigate('signup')
+    navigation.navigate('Signup')
   }
 
   const onForgotPasswordPressed = () => {
@@ -50,7 +55,7 @@ const LoginScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
       <KeyboardAwareScrollView style={tw`bg-white flex-1`}>
         <View style={tw.style(`items-center px-10`, {height: (metrics.screenHeight - headerHeight - statusBarHeight)})}>
           <Logo width={170}/>
-          <Text style={tw`text-2xl font-bold py-3`}>Welcome!</Text>
+          <Text style={tw`text-2xl font-RalewayBold py-3`}>Welcome!</Text>
           <Text style={tw`text-lg text-grey mb-5`}>Enter your credential to login</Text>
           <TextInput
             label="Email"
@@ -77,7 +82,7 @@ const LoginScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
           <TouchableOpacity style={tw`w-full items-end`} activeOpacity={0.7} onPress={onForgotPasswordPressed}>
             <Text style={tw`text-sm text-yellow`}>Forgot password?</Text>
           </TouchableOpacity>
-          <Button mode="contained" style={tw`w-full rounded-md mt-5`} labelStyle={tw`text-lg`} onPress={onLoginPressed}>Login</Button>
+          <Button mode="contained" style={tw.style(`w-full rounded-md mt-5`)} labelStyle={tw`text-lg`} onPress={onLoginPressed}>Login</Button>
           <View style={tw`absolute bottom-3 w-full flex-row items-center justify-center`}>
             <Text style={tw`text-lg text-grey`}>Don't have an account?</Text>
             <TouchableOpacity onPress={onSignupPressed} activeOpacity={0.7}>

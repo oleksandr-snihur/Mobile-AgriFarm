@@ -1,13 +1,23 @@
 import React, { useEffect } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+import tw from '../helpers/tailwind';
 import { View, ImageBackground, Text, Image, StyleSheet } from 'react-native';
 
+
+/**
+ * component definition
+ * @returns ReactNode
+ */
 const HomeScreen: React.FC = () => {
   useEffect(() => {}, []);
 
   return (
-    <View style={styles.container}>
-      <Text>Home Screen</Text>
-    </View>
+    <SafeAreaView style={tw`h-full bg-screenBackground flex-1`}>
+      <View style={tw.style(`items-center px-10 flex-1`)}>
+
+      </View>
+    </SafeAreaView>
   );
 };
 
