@@ -7,6 +7,7 @@ module.exports = {
         green: "#00933F",
         greenLight: "#26BC80",
         greenDark: "#239768",
+        greenBackLayer: "#26BC802A",
   
         yellow: "#DDA824",
         yellowLight: "#FFBA49",
@@ -14,7 +15,7 @@ module.exports = {
         grey: "#949494",
         greyLight: "#B3B3B3",
 
-        screenBackground: "#F7FFFC"
+        screenBackground: "#F1FDF8EE"
       },
       fontFamily: {
         RalewayRegular: ['Raleway-Regular'],
@@ -22,7 +23,7 @@ module.exports = {
         RalewaySemiBold: ['Raleway-SemiBold'],
         RalewayBold: ['Raleway-Bold'],
       }
-    },
+    }
   },
   plugins: [],
 }

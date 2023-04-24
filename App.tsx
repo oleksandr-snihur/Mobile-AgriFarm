@@ -47,14 +47,14 @@ const HomeStack: React.FC = () => {
                 activeOpacity={0.7}
                 style={tw`mr-3`}
               >
-                <SettingsSVG width={30} height={30} />
+                <SettingsSVG width={20} height={20} />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={()=>{}}
                 activeOpacity={0.7}
                 style={tw`mr-3`}
               >
-                <NotificationSVG width={30} height={30} />
+                <NotificationSVG width={20} height={20} />
               </TouchableOpacity>
             </AppBar>
           )

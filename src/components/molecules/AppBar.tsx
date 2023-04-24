@@ -24,7 +24,7 @@ type Props = {
 const AppBar: React.FC<Props> = ({children=<></>, navigation, route, style={}, back=true, menu=false, title=true }) => {
 
   return (
-    <View style={tw.style(`w-full flex-row p-4 relative`, style)}>
+    <View style={tw.style(`w-full flex-row p-4 relative h-[50px]`, style)}>
       <View style={tw`flex-row`}>
         {menu ? 
           <TouchableOpacity
@@ -32,7 +32,7 @@ const AppBar: React.FC<Props> = ({children=<></>, navigation, route, style={}, b
             activeOpacity={0.7}
             style={tw`mr-3`}
           >
-            <MenuSVG width={30} height={30} /> 
+            <MenuSVG width={20} height={20} /> 
           </TouchableOpacity>
           : <></>
         }
@@ -41,7 +41,7 @@ const AppBar: React.FC<Props> = ({children=<></>, navigation, route, style={}, b
             onPress={navigation.goBack}
             activeOpacity={0.7}
           >
-            <BackSVG width={30} height={30} /> 
+            <BackSVG width={20} height={20} /> 
           </TouchableOpacity>
           : <></>
         }
