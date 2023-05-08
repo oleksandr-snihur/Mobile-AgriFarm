@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, TouchableOpacity, View } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
 import SwitchSelector from 'react-native-switch-selector';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import tw from '../helpers/tailwind';
 import ShopCategory from '../components/molecules/ShopCategory';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import SvgPlus from '../assets/icons/icon_plus.svg';
 
 type Props = {
   navigation: NavigationProp<Record<string, unknown>>;
@@ -56,6 +58,10 @@ const ShopScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
           {/* <ShopCategory imgSrc="wheat" title="Rice" quantity="100" priceRangeUnit="15-25"/> */}
         </ScrollView>
       </View>
+
+      <TouchableOpacity style={tw`absolute bottom-[2rem] right-[2rem]`} activeOpacity={0.7} onPress={() => {}}>
+        <SvgPlus width={40} height={40}/>
+      </TouchableOpacity>
       
     </SafeAreaView>
   );

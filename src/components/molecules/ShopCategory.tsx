@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { Image, ImageBackground, View, ViewStyle } from 'react-native';
+import React from 'react';
+import { Image, View } from 'react-native';
 import { Text } from 'react-native-paper';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import tw from '../../helpers/tailwind';
+import SvgPhone from '../../assets/icons/phone.svg';
+import SvgMapMarker from '../../assets/icons/map_marker.svg';
 
 type Props = {
   imgSrc: string;
@@ -44,8 +44,8 @@ const FarmCategory: React.FunctionComponent<Props> = ({imgSrc, title, quantity, 
           <Text style={tw`flex-none text-base font-RalewayBold`}>{title}</Text>
           <View style={tw`flex-1 items-end justify-end`}>
             <View style={tw`flex flex-row`}>
-              <Icon name="map-marker" size={24} color="#26BC80" />
-              <Icon name="phone" size={24} color="#26BC80" style={tw`ml-2`}/>
+              <SvgMapMarker width={24} height={24} />
+              <SvgPhone width={20} height={20} style={tw`ml-2`}/>
             </View>
           </View>
         </View>

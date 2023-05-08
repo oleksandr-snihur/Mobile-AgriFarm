@@ -66,7 +66,12 @@ const HomeScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
         <HomeCategory text="AgriCultural Support" onPress={() => {}} blRound={true} style={tw`mr-2`}>
           <SvgAgriCulSupport width={40} height={40}/>
         </HomeCategory>
-        <HomeCategory text="Customer Support" onPress={() => {}} blRound={false}>
+        <HomeCategory text="Customer Support"
+          onPress={() => {
+            navigation.navigate('appStack', {screen: 'Customer Support'})
+          }}
+          blRound={false}
+        >
           <SvgCusSupport width={40} height={40}/>
         </HomeCategory>
       </View>
