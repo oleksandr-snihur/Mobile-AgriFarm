@@ -1,4 +1,4 @@
-import { Appbar as PaperAppBar, Text } from 'react-native-paper';
+import { Text } from 'react-native-paper';
 import { ParamListBase, RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
@@ -32,7 +32,7 @@ const AppBar: React.FC<Props> = ({children=<></>, navigation, route, style={}, b
             activeOpacity={0.7}
             style={tw`mr-3`}
           >
-            <MenuSVG width={20} height={20} /> 
+            <MenuSVG width={25} height={25} /> 
           </TouchableOpacity>
           : <></>
         }
@@ -41,7 +41,7 @@ const AppBar: React.FC<Props> = ({children=<></>, navigation, route, style={}, b
             onPress={navigation.goBack}
             activeOpacity={0.7}
           >
-            <BackSVG width={20} height={20} /> 
+            <BackSVG width={25} height={25} /> 
           </TouchableOpacity>
           : <></>
         }
@@ -59,25 +59,3 @@ const AppBar: React.FC<Props> = ({children=<></>, navigation, route, style={}, b
 }
 
 export default AppBar;
-
-// type Props = {
-//   navigation: StackNavigationProp<ParamListBase>;
-//   route: RouteProp<ParamListBase>;
-//   style?: object;
-// }
-
-// /**
-//  * component definition
-//  * @returns ReactNode
-//  */
-// const AppBar: React.FC<Props> = ({ navigation, route, style={} }) => {
-
-//   return (
-//     <PaperAppBar.Header style={tw.style(style)}>
-//       {/* <PaperAppBar.Content title={route.name} /> */}
-//       {/* <PaperAppBar.Action icon="magnify" onPress={() => {}} /> */}
-//     </PaperAppBar.Header>
-//   );
-// }
-
-// export default AppBar;

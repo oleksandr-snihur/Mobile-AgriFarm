@@ -1,17 +1,26 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import { Button, Provider as PaperProvider } from 'react-native-paper';
-import {createStackNavigator} from '@react-navigation/stack';
-import { NavigationContainer, NavigationContainerRef, ParamListBase } from '@react-navigation/native';
+import { Provider as PaperProvider } from 'react-native-paper';
+import {StackNavigationOptions, createStackNavigator} from '@react-navigation/stack';
+import { NavigationContainer, NavigationContainerRef, NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
 
 import {theme} from './src/theme/theme';
 import tw from './src/helpers/tailwind';
-import AppBar from './src/components/molecules/AppBar';
-import { StartScreen, HomeScreen, LoginScreen, SignupScreen } from './src/screens';
+import AppBar from './src/components/molecules/HomeAppBar';
+import {
+  StartScreen,
+  LoginScreen,
+  SignupScreen,
+  HomeScreen,
+  MyFarmScreen,
+  ShopScreen,
+} from './src/screens';
 
 import SettingsSVG from './src/assets/icons/icon_settings.svg';
 import NotificationSVG from './src/assets/icons/icon_notification.svg';
+import BackBtnSVG from './src/assets/icons/btn_back.svg';
+import SearchBtnSVG from './src/assets/icons/search.svg';
 
 const Stack = createStackNavigator();
 
@@ -34,7 +43,6 @@ const AuthStack: React.FC = () => {
 
 
 const HomeStack: React.FC = () => {
-
   return (
     <Stack.Navigator 
       initialRouteName='Home'
@@ -47,14 +55,14 @@ const HomeStack: React.FC = () => {
                 activeOpacity={0.7}
                 style={tw`mr-3`}
               >
-                <SettingsSVG width={20} height={20} />
+                <SettingsSVG width={25} height={25} />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={()=>{}}
                 activeOpacity={0.7}
                 style={tw`mr-3`}
               >
-                <NotificationSVG width={20} height={20} />
+                <NotificationSVG width={25} height={25} />
               </TouchableOpacity>
             </AppBar>
           )
@@ -66,8 +74,61 @@ const HomeStack: React.FC = () => {
   )
 }
 
-let navigationRef: NavigationContainerRef<ParamListBase> | null = null;
+const headerOptionsCreator  = (navigation: NavigationProp<Record<string, unknown>>, right:string = ""): StackNavigationOptions => ({
+  headerTitleAlign: 'center',
+  headerStyle: {
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+  },
+  headerLeft: () => (
+    <TouchableOpacity
+      onPress={() => navigation.goBack()}
+      activeOpacity={0.7}
+      style={tw`ml-4`}
+    >
+      <BackBtnSVG width={25} height={25} />
+    </TouchableOpacity>
+  ),
+  headerRight: () => right==="" ? null : (
+      (right==="search" ?
+        <TouchableOpacity
+          onPress={() =>{}}
+          activeOpacity={0.7}
+          style={tw`mr-4`}
+        >
+          <SearchBtnSVG width={25} height={25} />
+        </TouchableOpacity>
+        :
+        <TouchableOpacity
+          onPress={() =>{}}
+          activeOpacity={0.7}
+          style={tw`mr-4`}
+        >
+          <NotificationSVG width={25} height={25} />
+        </TouchableOpacity>
+      )
+  )
+});
 
+const AppStack: React.FC = () => {
+  return (
+    <Stack.Navigator 
+      initialRouteName='My Farm'
+      screenOptions={{
+        cardStyle: { backgroundColor: '#F1FDF8EE' }
+      }}>
+
+      <Stack.Screen name='My Farm' component={MyFarmScreen}
+        options={({ navigation }) => headerOptionsCreator(navigation, "notification")}
+      />
+      <Stack.Screen name='Shop' component={ShopScreen}
+        options={({ navigation }) => headerOptionsCreator(navigation, "search")}
+      />
+    </Stack.Navigator>
+  )
+}
+
+let navigationRef: NavigationContainerRef<ParamListBase> | null = null;
 
 /**
  * component definition
@@ -84,6 +145,7 @@ const App: React.FC = () => {
         <Stack.Navigator initialRouteName='authStack'>
           <Stack.Screen name='authStack' options={{headerShown: false}} component={AuthStack}/>
           <Stack.Screen name='homeStack' options={{headerShown: false}} component={HomeStack}/>
+          <Stack.Screen name='appStack' options={{headerShown: false}} component={AppStack}/>
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

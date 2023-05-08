@@ -3,8 +3,8 @@ import { TouchableOpacity, View, StatusBar } from "react-native"
 import { useHeaderHeight } from '@react-navigation/elements';
 import { NavigationContainerRef, ParamListBase } from '@react-navigation/native'
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Text, Button } from 'react-native-paper'
+import { ScrollView } from 'react-native';
 
 import RegisterType from '../components/molecules/RegisterType';
 import tw from '../helpers/tailwind'
@@ -58,7 +58,7 @@ const SignupScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
 
   return (
     <SafeAreaView style={tw`h-full`}>
-      <KeyboardAwareScrollView style={tw`bg-white flex-1`}>
+      <ScrollView style={tw`bg-white flex-1`}>
         <View style={tw.style(`px-10 items-center`, {height: (metrics.screenHeight - headerHeight - statusBarHeight)})}>
           <View style={tw`w-full flex-row items-start mb-2`}>
             <Text style={tw`self-center mr-4 text-lg`}>Register As</Text>
@@ -127,7 +127,7 @@ const SignupScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
             </TouchableOpacity>
           </View>
         </View>
-      </KeyboardAwareScrollView>
+      </ScrollView>
     </SafeAreaView>
   );
 };

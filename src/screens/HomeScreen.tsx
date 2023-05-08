@@ -37,10 +37,20 @@ const HomeScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
         <Text style={tw`text-base text-green font-RalewaySemiBold`}> Steve</Text>
       </View>
       <View style={tw`w-full flex-row items-center justify-center mt-4`}>
-        <HomeCategory text="My Farm" onPress={() => {}} blRound={true} style={tw`mr-2`}>
+        <HomeCategory text="My Farm"
+          onPress={() => {
+            navigation.navigate('appStack')
+          }}
+          blRound={true} style={tw`mr-2`}
+        >
           <SvgFarm width={40} height={40}/>
         </HomeCategory>
-        <HomeCategory text="Shop" onPress={() => {}} blRound={false}>
+        <HomeCategory text="Shop"
+          onPress={() => {
+            navigation.navigate('appStack', {screen: 'Shop'})
+          }}
+          blRound={false}
+        >
           <SvgShop width={40} height={40}/>
         </HomeCategory>
       </View>
@@ -106,13 +116,5 @@ const HomeScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-});
 
 export default HomeScreen;

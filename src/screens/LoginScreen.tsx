@@ -3,7 +3,7 @@ import { TouchableOpacity, View, StatusBar } from "react-native";
 import { useHeaderHeight } from '@react-navigation/elements';
 import { NavigationContainerRef, ParamListBase } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { ScrollView } from 'react-native';
 import { Text, Button } from 'react-native-paper';
 
 import tw from '../helpers/tailwind';
@@ -52,7 +52,7 @@ const LoginScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
 
   return (
     <SafeAreaView style={tw`h-full`}>
-      <KeyboardAwareScrollView style={tw`bg-white flex-1`}>
+      <ScrollView style={tw`bg-white flex-1`}>
         <View style={tw.style(`items-center px-10`, {height: (metrics.screenHeight - headerHeight - statusBarHeight)})}>
           <Logo width={170}/>
           <Text style={tw`text-2xl font-RalewayBold py-3`}>Welcome!</Text>
@@ -90,7 +90,7 @@ const LoginScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
             </TouchableOpacity>
           </View>
         </View>
-      </KeyboardAwareScrollView>
+      </ScrollView>
     </SafeAreaView>
   );
 };
