@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, ImageBackground, Text, Image, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import { NavigationContainerRef, ParamListBase } from '@react-navigation/native';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -36,6 +36,8 @@ const HomeScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
         <Text style={tw`text-sm text-green`}>Good Morning,</Text>
         <Text style={tw`text-base text-green font-RalewaySemiBold`}> Steve</Text>
       </View>
+
+
       <View style={tw`w-full flex-row items-center justify-center mt-4`}>
         <HomeCategory text="My Farm"
           onPress={() => {
@@ -45,6 +47,7 @@ const HomeScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
         >
           <SvgFarm width={40} height={40}/>
         </HomeCategory>
+
         <HomeCategory text="Shop"
           onPress={() => {
             navigation.navigate('appStack', {screen: 'Shop'})
@@ -54,18 +57,39 @@ const HomeScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
           <SvgShop width={40} height={40}/>
         </HomeCategory>
       </View>
+
+
       <View style={tw`w-full flex-row items-center justify-center mt-3`}>
-        <HomeCategory text="Financial Service" onPress={() => {}} blRound={true} style={tw`mr-2`}>
+        <HomeCategory text="Financial Service"
+           onPress={() => {
+            navigation.navigate('appStack', {screen: 'Financial Services'})
+          }}
+          blRound={true} style={tw`mr-2`}
+        >
           <SvgFinancialService width={40} height={40}/>
         </HomeCategory>
-        <HomeCategory text="Training" onPress={() => {}} blRound={false}>
+
+        <HomeCategory text="Training"
+          onPress={() => {
+            navigation.navigate('appStack', {screen: 'Training'})
+          }}
+          blRound={false}
+        >
           <SvgTraining width={40} height={40}/>
         </HomeCategory>
       </View>
+
+
       <View style={tw`w-full flex-row items-center justify-center mt-3`}>
-        <HomeCategory text="AgriCultural Support" onPress={() => {}} blRound={true} style={tw`mr-2`}>
+        <HomeCategory text="AgriCultural Support"
+            onPress={() => {
+              navigation.navigate('appStack', {screen: 'Agri Cultural Support'})
+            }}
+            blRound={true} style={tw`mr-2`}
+          >
           <SvgAgriCulSupport width={40} height={40}/>
         </HomeCategory>
+
         <HomeCategory text="Customer Support"
           onPress={() => {
             navigation.navigate('appStack', {screen: 'Customer Support'})
@@ -75,6 +99,8 @@ const HomeScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
           <SvgCusSupport width={40} height={40}/>
         </HomeCategory>
       </View>
+
+
       <View style={tw`absolute w-[150px] h-[180px] bg-greenLight bottom-0 left-0 flex-1 items-center justify-center rounded-tr-3xl`}>
         <View style={tw`flex-1 items-center justify-center`}>
           <Text style={tw`text-2xl text-white font-RalewaySemiBold`}>
@@ -89,6 +115,8 @@ const HomeScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
           <Text style={tw`text-base text-white font-RalewayMedium mr-4`}>MIN</Text>
         </View>
       </View>
+
+
       <View style={tw`absolute w-[150px] h-[180px] bg-greenDark bottom-0 right-0 flex-1 items-center justify-center rounded-tl-3xl`}>
         <View style={tw`flex flex-row items-center justify-center mb-2`}>
           <View style={tw`w-10 h-10 rounded-[20px] bg-white items-center justify-center`}>

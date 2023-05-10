@@ -52,7 +52,7 @@ const LoginScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
 
   return (
     <SafeAreaView style={tw`h-full`}>
-      <ScrollView style={tw`bg-white flex-1`}>
+      <ScrollView style={tw`bg-white flex-1`} showsVerticalScrollIndicator={false}>
         <View style={tw.style(`items-center px-10`, {height: (metrics.screenHeight - headerHeight - statusBarHeight)})}>
           <Logo width={170}/>
           <Text style={tw`text-2xl font-RalewayBold py-3`}>Welcome!</Text>

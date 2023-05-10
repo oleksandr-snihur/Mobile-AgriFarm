@@ -15,6 +15,9 @@ import {
   HomeScreen,
   MyFarmScreen,
   ShopScreen,
+  FinancialServiceScreen,
+  TrainingScreen,
+  AgriCulturalSupportScreen,
   CustomerSupportScreen,
 } from './src/screens';
 
@@ -97,7 +100,7 @@ const headerOptionsCreator  = (navigation: NavigationProp<Record<string, unknown
           activeOpacity={0.7}
           style={tw`mr-4`}
         >
-          <SearchBtnSVG width={25} height={25} />
+          <SearchBtnSVG width={23} height={23} />
         </TouchableOpacity>
         :
         <TouchableOpacity
@@ -105,7 +108,7 @@ const headerOptionsCreator  = (navigation: NavigationProp<Record<string, unknown
           activeOpacity={0.7}
           style={tw`mr-4`}
         >
-          <NotificationSVG width={25} height={25} />
+          <NotificationSVG width={23} height={23} />
         </TouchableOpacity>
       )
   )
@@ -124,6 +127,15 @@ const AppStack: React.FC = () => {
       />
       <Stack.Screen name='Shop' component={ShopScreen}
         options={({ navigation }) => headerOptionsCreator(navigation, "search")}
+      />
+      <Stack.Screen name='Financial Services' component={FinancialServiceScreen}
+        options={({ navigation }) => headerOptionsCreator(navigation)}
+      />
+      <Stack.Screen name='Training' component={TrainingScreen}
+        options={({ navigation }) => headerOptionsCreator(navigation, "search")}
+      />
+      <Stack.Screen name='Agri Cultural Support' component={AgriCulturalSupportScreen}
+        options={({ navigation }) => headerOptionsCreator(navigation)}
       />
       <Stack.Screen name='Customer Support' component={CustomerSupportScreen}
         options={({ navigation }) => headerOptionsCreator(navigation)}

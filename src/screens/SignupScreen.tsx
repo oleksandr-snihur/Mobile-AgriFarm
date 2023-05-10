@@ -58,7 +58,7 @@ const SignupScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
 
   return (
     <SafeAreaView style={tw`h-full`}>
-      <ScrollView style={tw`bg-white flex-1`}>
+      <ScrollView style={tw`bg-white flex-1`} showsVerticalScrollIndicator={false}>
         <View style={tw.style(`px-10 items-center`, {height: (metrics.screenHeight - headerHeight - statusBarHeight)})}>
           <View style={tw`w-full flex-row items-start mb-2`}>
             <Text style={tw`self-center mr-4 text-lg`}>Register As</Text>

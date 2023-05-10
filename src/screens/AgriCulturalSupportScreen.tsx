@@ -17,10 +17,10 @@ type Props = {
  * component definition
  * @returns ReactNode
  */
-const CustomerSupportScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
+const AgriCulturalSupportScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
   useEffect(() => {}, []);
 
-  const [searchText, setSearchText] = useState('')
+  const [searchText, setSearchText] = useState('Ontario')
 
   const handleSearchPress = () => {
     
@@ -49,12 +49,15 @@ const CustomerSupportScreen: React.FunctionComponent<Props> = ({navigation}: Pro
           </TouchableOpacity>
         </View>
 
-        <View style={tw`flex w-full mt-[2rem] h-6/7`}>
-          <ScrollView showsVerticalScrollIndicator={false}>
-            <CustomerSupportCategory imgSrc="man" name="Benjamin Brown" location="Skaneateles, NY"/>
-            <CustomerSupportCategory imgSrc="farmer2" name="Christopher Garcia" location="Woodstock, VT" />
-            <CustomerSupportCategory imgSrc="farmer3" name="David Johnson" location="Mackinaw City, MI" />
-            <CustomerSupportCategory imgSrc="farmer1" name="William Smith" location="Stowe, VT" />
+        <View style={tw`flex w-full mt-[1rem] h-6/7`}>
+          <ScrollView showsVerticalScrollIndicator={false} style={tw`h-full`}>
+            <CustomerSupportCategory imgSrc="farmer1" name="Benjamin Brown" location="Ontario"/>
+            <CustomerSupportCategory imgSrc="farmer2" name="Christopher Garcia" location="Ontario" />
+            <CustomerSupportCategory imgSrc="man" name="David Johnson" location="Ontario" />
+            <CustomerSupportCategory imgSrc="farmer3" name="William Smith" location="Ontario" />
+            <CustomerSupportCategory imgSrc="farmer2" name="Christopher Garcia" location="Ontario" />
+            <CustomerSupportCategory imgSrc="farmer1" name="hristopher Garcia" location="Ontario"/>
+            <CustomerSupportCategory imgSrc="man" name="Benjamin Brown" location="Ontario" />
           </ScrollView>
         </View>
       </ScrollView>
@@ -62,4 +65,4 @@ const CustomerSupportScreen: React.FunctionComponent<Props> = ({navigation}: Pro
   );
 };
 
-export default CustomerSupportScreen;
+export default AgriCulturalSupportScreen;
