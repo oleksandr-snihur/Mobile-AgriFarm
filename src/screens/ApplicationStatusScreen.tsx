@@ -25,7 +25,7 @@ const ApplicationStatusScreen: React.FunctionComponent<Props> = ({navigation}: P
   const [captcha, setCaptcha] = useState("wszkd");
 
   return (
-    <SafeAreaView style={tw`h-1/1 bg-screenBackground flex-1 px-[1rem]`}>
+    <SafeAreaView style={tw`h-full bg-screenBackground flex-1 px-[1rem]`}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={tw`flex-1 w-full items-start justify-start h-7/8`}>
           <Text style={tw`text-green font-RalewaySemiBold mt-5`}>Enter Application No</Text>

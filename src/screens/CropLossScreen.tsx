@@ -21,7 +21,7 @@ const CropLossScreen: React.FunctionComponent<Props> = ({navigation}: Props) => 
   useEffect(() => {}, []);
 
   return (
-    <SafeAreaView style={tw`h-1/1 bg-screenBackground flex-1 px-[1rem]`}>
+    <SafeAreaView style={tw`h-full bg-screenBackground flex-1 px-[1rem]`}>
       <ScrollView showsVerticalScrollIndicator={false} style={tw`flex`}>
         <View style={tw`flex-1 w-full mt-[1.5rem] h-7/8`}>
           <View style={tw`flex flex-row w-full bg-white p-[0.75rem] rounded-xl mb-[1rem] items-center`}>

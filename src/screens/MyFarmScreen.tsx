@@ -21,7 +21,7 @@ const MyFarmScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
   useEffect(() => {}, []);
 
   return (
-    <SafeAreaView style={tw`h-1/1 bg-screenBackground flex-1 px-[1rem]`}>
+    <SafeAreaView style={tw`h-full bg-screenBackground flex-1 px-[1rem]`}>
       <TouchableOpacity style={tw`w-full items-start mt-[1rem]`} activeOpacity={0.7} onPress={() => {}}>
         <Text style={tw`text-green font-RalewaySemiBold`}>Add New</Text>
       </TouchableOpacity>

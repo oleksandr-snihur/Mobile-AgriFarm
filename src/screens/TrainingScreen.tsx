@@ -21,7 +21,7 @@ const TrainingScreen: React.FunctionComponent<Props> = ({navigation}: Props) => 
   useEffect(() => {}, []);
 
   return (
-    <SafeAreaView style={tw`h-1/1 bg-screenBackground flex-1 px-[1rem]`}>
+    <SafeAreaView style={tw`h-full bg-screenBackground flex-1 px-[1rem]`}>
       <ScrollView style={tw`flex-1`} showsVerticalScrollIndicator={false}>
         <View style={tw`flex w-full mt-[1rem] h-6/7`}>
           <TrainingCategory imgSrc="" title="Amazing Agriculture Technology, Plant and Harvest ..." view={450}/>

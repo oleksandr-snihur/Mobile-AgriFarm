@@ -27,7 +27,7 @@ const AgriCulturalSupportScreen: React.FunctionComponent<Props> = ({navigation}:
   };
 
   return (
-    <SafeAreaView style={tw`h-1/1 bg-screenBackground flex-1 px-[1rem]`}>
+    <SafeAreaView style={tw`h-full bg-screenBackground flex-1 px-[1rem]`}>
       <ScrollView style={tw`flex-1`} showsVerticalScrollIndicator={false}>
         <View style={tw`flex flex-row mt-[1rem]`}>
           <View style={tw`flex-none w-6/7`}>

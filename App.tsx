@@ -1,13 +1,15 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 import {StackNavigationOptions, createStackNavigator} from '@react-navigation/stack';
 import { NavigationContainer, NavigationContainerRef, NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
 
-import {theme} from './src/theme/theme';
+import { theme } from './src/theme/theme';
+
 import tw from './src/helpers/tailwind';
 import AppBar from './src/components/molecules/HomeAppBar';
+
 import {
   StartScreen,
   LoginScreen,
@@ -180,7 +182,7 @@ const App: React.FC = () => {
         <Stack.Navigator initialRouteName='authStack'>
           <Stack.Screen name='authStack' options={{headerShown: false}} component={AuthStack}/>
           <Stack.Screen name='homeStack' options={{headerShown: false}} component={HomeStack}/>
-          <Stack.Screen name='appStack' options={{headerShown: false}} component={AppStack}/>
+          <Stack.Screen name='appStack' options={{headerShown: false}} component={AppStack} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

@@ -29,7 +29,7 @@ const ShopScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
   ];
 
   return (
-    <SafeAreaView style={tw`h-1/1 bg-screenBackground flex-1 px-[1rem]`}>
+    <SafeAreaView style={tw`h-full bg-screenBackground flex-1 px-[1rem]`}>
       <View style={tw`flex flex-row mt-[2rem]`}>
         <View style={tw`flex-none w-3/4 pl-[1rem]`}>
           <SwitchSelector

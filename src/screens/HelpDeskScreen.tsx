@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -27,9 +27,9 @@ const HelpDeskScreen: React.FunctionComponent<Props> = ({navigation}: Props) => 
   const [comments, setComments] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
 
   return (
-    <SafeAreaView style={tw`h-1/1 bg-screenBackground flex-1 px-[1rem]`}>
+    <SafeAreaView style={tw`h-full bg-screenBackground flex-1 px-[1rem]`}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={tw`flex-1 w-full h-full`}>
+        <View style={tw`flex-1 w-full`}>
           <View style={tw`flex-1 items-center justify-center mt-2`}>
             <SvgHelpDesk width={130} height={130} />
             <Text style={tw`text-black font-RalewayRegular mt-1`}>Welcome, please kindly fill below details</Text>
