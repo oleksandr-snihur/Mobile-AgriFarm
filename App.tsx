@@ -13,12 +13,18 @@ import {
   LoginScreen,
   SignupScreen,
   HomeScreen,
+
   MyFarmScreen,
   ShopScreen,
   FinancialServiceScreen,
   TrainingScreen,
   AgriCulturalSupportScreen,
   CustomerSupportScreen,
+
+  CropLossScreen,
+  InsurancePremiumCalculatorScreen,
+  ApplicationStatusScreen,
+  HelpDeskScreen,
 } from './src/screens';
 
 import SettingsSVG from './src/assets/icons/icon_settings.svg';
@@ -138,6 +144,19 @@ const AppStack: React.FC = () => {
         options={({ navigation }) => headerOptionsCreator(navigation)}
       />
       <Stack.Screen name='Customer Support' component={CustomerSupportScreen}
+        options={({ navigation }) => headerOptionsCreator(navigation)}
+      />
+
+      <Stack.Screen name='Crop Loss' component={CropLossScreen}
+        options={({ navigation }) => headerOptionsCreator(navigation)}
+      />
+      <Stack.Screen name='Insurance Premium Calculator' component={InsurancePremiumCalculatorScreen}
+        options={({ navigation }) => headerOptionsCreator(navigation)}
+      />
+      <Stack.Screen name='Application Status' component={ApplicationStatusScreen}
+        options={({ navigation }) => headerOptionsCreator(navigation)}
+      />
+      <Stack.Screen name='Help Desk' component={HelpDeskScreen}
         options={({ navigation }) => headerOptionsCreator(navigation)}
       />
     </Stack.Navigator>

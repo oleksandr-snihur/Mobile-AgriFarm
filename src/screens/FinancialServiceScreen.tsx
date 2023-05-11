@@ -33,7 +33,9 @@ const FinancialServiceScreen: React.FunctionComponent<Props> = ({navigation}: Pr
             </View>
             <View style={tw`flex-2 pl-[0.5rem]`}>
               <TouchableOpacity
-                onPress={() => {}}
+                onPress={() => {
+                  navigation.navigate('appStack', {screen: 'Crop Loss'})
+                }}
                 activeOpacity={0.7}
               >
                 <Text style={tw`text-base text-green font-RalewaySemiBold`}>Crop Loss</Text>
@@ -48,7 +50,9 @@ const FinancialServiceScreen: React.FunctionComponent<Props> = ({navigation}: Pr
             </View>
             <View style={tw`flex-2 pl-[0.5rem]`}>
               <TouchableOpacity
-                onPress={() => {}}
+                onPress={() => {
+                  navigation.navigate('appStack', {screen: 'Insurance Premium Calculator'})
+                }}
                 activeOpacity={0.7}
               >
                 <Text style={tw`text-base text-[#1B78C3] font-RalewaySemiBold`}>Insurance Premium Calculator</Text>
@@ -63,7 +67,9 @@ const FinancialServiceScreen: React.FunctionComponent<Props> = ({navigation}: Pr
             </View>
             <View style={tw`flex-2 pl-[0.5rem]`}>
               <TouchableOpacity
-                onPress={() => {}}
+                onPress={() => {
+                  navigation.navigate('appStack', {screen: 'Application Status'})
+                }}
                 activeOpacity={0.7}
               >
                 <Text style={tw`text-base text-yellow font-RalewaySemiBold`}>Application Status</Text>
@@ -78,7 +84,9 @@ const FinancialServiceScreen: React.FunctionComponent<Props> = ({navigation}: Pr
             </View>
             <View style={tw`flex-2 pl-[0.5rem]`}>
               <TouchableOpacity
-                onPress={() => {}}
+                onPress={() => {
+                  navigation.navigate('appStack', {screen: 'Help Desk'})
+                }}
                 activeOpacity={0.7}
               >
                 <Text style={tw`text-base text-[#13C5C5] font-RalewaySemiBold`}>Help Desk</Text>
