@@ -17,7 +17,6 @@ import SvgRain from '../assets/icons/icon_rain.svg';
 import SvgHumidity from '../assets/icons/icon_humidity.svg';
 import SvgWind from '../assets/icons/icon_wind.svg';
 
-
 type Props = {
   navigation: NavigationContainerRef<ParamListBase>;
 }
@@ -36,8 +35,7 @@ const HomeScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
         <Text style={tw`text-sm text-green`}>Good Morning,</Text>
         <Text style={tw`text-base text-green font-RalewaySemiBold`}> Steve</Text>
       </View>
-
-
+      
       <View style={tw`w-full flex-row items-center justify-center mt-4`}>
         <HomeCategory text="My Farm"
           onPress={() => {

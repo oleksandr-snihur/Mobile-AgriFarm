@@ -57,19 +57,19 @@ const MyFarmScreen: React.FunctionComponent<Props> = ({navigation}: Props) => {
       <Text style={tw`w-full text-green font-RalewaySemiBold items-start mt-[1rem]`}>My Farms</Text>
       <View style={tw`flex w-full mt-[1rem] mr-4 h-2/3`}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <FarmCategory imgSrc="" tempHigh="28" tempLow="17" numVal="57400" cate="Tomato" subCate="Tomato" subDate={'15/07/2022'}
+          <FarmCategory navigation={navigation} imgSrc="" tempHigh="28" tempLow="17" numVal="57400" cate="Tomato" subCate="Tomato" subDate={'15/07/2022'}
             size="0.7" totalDate="119" desc="_" dots={false}
           />
-          <FarmCategory imgSrc="" tempHigh="25" tempLow="13" numVal="57400" cate="Broccoli" subCate="_" subDate={'15/08/2022'}
+          <FarmCategory navigation={navigation} imgSrc="" tempHigh="25" tempLow="13" numVal="57400" cate="Broccoli" subCate="_" subDate={'15/08/2022'}
             size="62.8" totalDate="120" desc="Clearing in afternoon" dots={true}
           />
-          <FarmCategory imgSrc="" tempHigh="28" tempLow="17" numVal="57400" cate="Cabbage" subCate="_" subDate={'15/09/2022'}
+          <FarmCategory navigation={navigation} imgSrc="" tempHigh="28" tempLow="17" numVal="57400" cate="Cabbage" subCate="_" subDate={'15/09/2022'}
             size="0.7" totalDate="119" desc="Partly cloud through out the day with rain" dots={true}
           />
-          <FarmCategory imgSrc="" tempHigh="28" tempLow="17" numVal="57400" cate="Corn" subCate="Corn" subDate={'15/07/2022'}
+          <FarmCategory navigation={navigation} imgSrc="" tempHigh="28" tempLow="17" numVal="57400" cate="Corn" subCate="Corn" subDate={'15/07/2022'}
             size="0.7" totalDate="119" desc="Cloudy skies through out the day with rain" dots={true}
           />
-          <FarmCategory imgSrc="" tempHigh="28" tempLow="17" numVal="57400" cate="Cabbage" subCate="_" subDate={'15/09/2022'}
+          <FarmCategory navigation={navigation} imgSrc="" tempHigh="28" tempLow="17" numVal="57400" cate="Cabbage" subCate="_" subDate={'15/09/2022'}
             size="0.7" totalDate="119" desc="Partly cloud through out the day with rain" dots={true}
           />
         </ScrollView>

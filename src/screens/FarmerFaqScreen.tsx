@@ -1,19 +1,6 @@
-import React, { PropsWithChildren, useEffect, useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { ScrollView, Text, View, TouchableOpacity } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
-
-import {
-  StyleSheet,
-  TouchableOpacity,
-  Button,
-  Platform,
-  UIManager,
-  LayoutAnimation
-} from 'react-native';
-
-if(Platform.OS === 'android') {
-  UIManager.setLayoutAnimationEnabledExperimental(true);
-}
 
 import Accordion from 'react-native-collapsible/Accordion';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -92,10 +79,13 @@ const FarmerFaqScreen: React.FunctionComponent<Props> = ({navigation}: Props) =>
   function renderHeader(section: {content: React.ReactNode, title: string}, idx: number, isActive: boolean) {
     return (
         <View
-          style={tw.style(`bg-white p-3 rounded-lg`, {
+          style={tw.style(`bg-white p-3`, {
             flex: 1,
             flexDirection: 'row',
-            justifyContent:'space-between'
+            justifyContent:'space-between',
+            borderRadius: 8,
+            borderBottomLeftRadius : isActive ? 0 : 8,
+            borderBottomRightRadius : isActive ? 0 : 8,
           })}
         >
           <Text style={tw`text-base font-RalewaySemiBold text-black`}>{ section.title }</Text>
@@ -106,7 +96,15 @@ const FarmerFaqScreen: React.FunctionComponent<Props> = ({navigation}: Props) =>
 
   function renderContent(section: {content: React.ReactNode, title: string}, idx: number, isActive: boolean) {
     return (
-      <View style={tw`p-3 bg-white rounded-lg`}>
+      <View
+        style={tw.style(`p-3 bg-white`,
+          {
+            borderRadius: 8,
+            borderTopLeftRadius : isActive ? 0 : 8,
+            borderTopRightRadius : isActive ? 0 : 8,
+          }
+        )}
+      >
         {section.content}
       </View>
     );

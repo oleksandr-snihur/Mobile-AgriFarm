@@ -1,11 +1,13 @@
 import React from 'react';
-import { Image, View } from 'react-native';
+import { Image, TouchableOpacity, View } from 'react-native';
+import { NavigationProp } from '@react-navigation/native';
 import { Text } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import tw from '../../helpers/tailwind';
 
 type Props = {
+  navigation: NavigationProp<Record<string, unknown>>;
   imgSrc: string;
   tempHigh: string;
   tempLow: string;
@@ -23,7 +25,7 @@ type Props = {
  * component definition
  * @returns ReactNode
  */
-const FarmCategory: React.FunctionComponent<Props> = ({imgSrc, tempHigh, tempLow, numVal, cate, subCate, subDate, size, totalDate, desc, dots=false}) => {
+const FarmCategory: React.FunctionComponent<Props> = ({navigation, imgSrc, tempHigh, tempLow, numVal, cate, subCate, subDate, size, totalDate, desc, dots=false}) => {
   const img = require("../../assets/my-farm/my-farm.jpg");
 
   return (
@@ -39,7 +41,15 @@ const FarmCategory: React.FunctionComponent<Props> = ({imgSrc, tempHigh, tempLow
       </View>
       <View style={tw`flex-1 pl-[1rem]`}>
         <View style={tw`flex flex-row`}>
-          <Text style={tw`flex-none text-base font-RalewayBold`}>{cate}</Text>
+          <TouchableOpacity 
+            style={tw`flex-none`}
+            activeOpacity={0.7}
+            onPress={() => {
+              navigation.navigate('appStack', {screen: 'Farm Details'})
+            }}
+          >
+            <Text style={tw`flex-none text-base font-RalewayBold`}>{cate}</Text>
+          </TouchableOpacity>
           <View style={tw`flex-1 items-end justify-end`}>
             <View style={tw`flex flex-row`}>
               <Icon name="camera" size={24} color="#000" />

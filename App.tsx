@@ -28,6 +28,8 @@ import {
   ApplicationStatusScreen,
   HelpDeskScreen,
   FarmerFaqScreen,
+
+  FarmDetailsScreen,
 } from './src/screens';
 
 import SettingsSVG from './src/assets/icons/icon_settings.svg';
@@ -163,6 +165,9 @@ const AppStack: React.FC = () => {
         options={({ navigation }) => headerOptionsCreator(navigation)}
       />
       <Stack.Screen name='Farmer FAQ' component={FarmerFaqScreen}
+        options={({ navigation }) => headerOptionsCreator(navigation)}
+      />
+      <Stack.Screen name='Farm Details' component={FarmDetailsScreen}
         options={({ navigation }) => headerOptionsCreator(navigation)}
       />
     </Stack.Navigator>

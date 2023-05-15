@@ -15,3 +15,4 @@ export { default as InsurancePremiumCalculatorScreen } from './InsurancePremiumC
 export { default as ApplicationStatusScreen } from './ApplicationStatusScreen'
 export { default as HelpDeskScreen } from './HelpDeskScreen'
 export { default as FarmerFaqScreen } from './FarmerFaqScreen'
+export { default as FarmDetailsScreen } from './FarmDetailsScreen'
