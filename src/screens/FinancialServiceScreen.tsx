@@ -101,7 +101,9 @@ const FinancialServiceScreen: React.FunctionComponent<Props> = ({navigation}: Pr
             </View>
             <View style={tw`flex-2 pl-[0.5rem]`}>
               <TouchableOpacity
-                onPress={() => {}}
+                onPress={() => {
+                  navigation.navigate('appStack', {screen: 'Farmer FAQ'})
+                }}
                 activeOpacity={0.7}
               >
                 <Text style={tw`text-base text-[#747474] font-RalewaySemiBold`}>Farmer FAQ</Text>

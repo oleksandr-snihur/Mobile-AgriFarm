@@ -32,7 +32,7 @@ const HelpDeskScreen: React.FunctionComponent<Props> = ({navigation}: Props) => 
         <View style={tw`flex-1 w-full`}>
           <View style={tw`flex-1 items-center justify-center mt-2`}>
             <SvgHelpDesk width={130} height={130} />
-            <Text style={tw`text-black font-RalewayRegular mt-1`}>Welcome, please kindly fill below details</Text>
+            <Text style={tw`text-black font-RalewaySemiBold mt-1`}>Welcome, please kindly fill below details</Text>
           </View>
           <Text style={tw`text-green font-RalewaySemiBold mt-2`}>Name</Text>
 

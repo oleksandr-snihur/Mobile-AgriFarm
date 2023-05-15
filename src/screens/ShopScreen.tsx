@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import tw from '../helpers/tailwind';
 import ShopCategory from '../components/molecules/ShopCategory';
 
-import SvgPlus from '../assets/icons/icon_plus.svg';
+import SvgPlus from '../assets/icons/btn_plus.svg';
 
 type Props = {
   navigation: NavigationProp<Record<string, unknown>>;
