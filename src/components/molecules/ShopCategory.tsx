@@ -8,7 +8,7 @@ import SvgMapMarker from '../../assets/icons/map_marker.svg';
 
 type Props = {
   imgSrc: string;
-  title: string;
+  cate: string;
   quantity: string;
   priceRangeUnit: string;
 }
@@ -17,7 +17,7 @@ type Props = {
  * component definition
  * @returns ReactNode
  */
-const FarmCategory: React.FunctionComponent<Props> = ({imgSrc, title, quantity, priceRangeUnit}) => {
+const FarmCategory: React.FunctionComponent<Props> = ({imgSrc, cate, quantity, priceRangeUnit}) => {
   const imgWheat = require("../../assets/shop/wheat.jpg");
   const imgApple = require("../../assets/shop/apple.jpg");
   const imgBanana = require("../../assets/shop/banana.jpg");
@@ -41,7 +41,7 @@ const FarmCategory: React.FunctionComponent<Props> = ({imgSrc, title, quantity, 
       </View>
       <View style={tw`flex-1 p-[0.5rem] pl-[1rem]`}>
         <View style={tw`flex flex-row pr-[0.5rem]`}>
-          <Text style={tw`flex-none text-base font-RalewayBold`}>{title}</Text>
+          <Text style={tw`flex-none text-base font-RalewayBold`}>{cate}</Text>
           <View style={tw`flex-1 items-end justify-end`}>
             <View style={tw`flex flex-row`}>
               <SvgMapMarker width={24} height={24} />

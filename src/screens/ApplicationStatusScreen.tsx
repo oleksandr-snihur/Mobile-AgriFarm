@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
